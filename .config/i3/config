@@ -246,6 +246,12 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
       bindsym Escape mode "default"
   }
 
+  #i3-alt-tab.py configuration https://github.com/yoshimoto/i3-alt-tab.py
+  set $i3t_alt_tab        /home/riley/.config/i3/i3-alt-tab.py n
+  set $i3t_alt_shift_tab  /home/riley/.config/i3/i3-alt-tab.py p
+  bindsym Mod1+Tab exec   exec $i3t_alt_tab
+  bindsym Mod1+Shift+Tab  exec $i3t_alt_shift_tab
+
   # Autostart applications
   exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
   exec --no-startup-id nitrogen --restore; sleep 1; compton -b
@@ -259,3 +265,6 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
   # exec --no-startup-id start_conky_green
   exec_always --no-startup-id ff-theme-util
   exec_always --no-startup-id fix_xcursor
+
+  #Moniter Fix
+  exec xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144
