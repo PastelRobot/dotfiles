@@ -43,6 +43,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+#Enable/Disable mouse warping
+mouse_warping none
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -181,6 +184,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        tray_output primary
         colors {
             background #222D31
             statusline #F9FAF9
@@ -197,8 +201,8 @@ bar {
 
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
-default_floating_border normal
+default_border 1pixel
+default_floating_border 1pixel
 
 # Hide borders
 hide_edge_borders none
