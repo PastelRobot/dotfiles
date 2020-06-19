@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 #Enable/Disable mouse warping
 mouse_warping none
@@ -50,11 +50,11 @@ mouse_warping none
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+Shift+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # launch categorized menu
 bindsym $mod+F1 exec --no-startup-id morc_menu
@@ -133,9 +133,8 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 
-#Swapping each moniters active workspace
-set $i3-swap /home/riley/.config/i3/i3-swap.py
-bindsym $mod+b exec $i3-swap
+#Swapping each moniters active workspace https://github.com/einzigartigername/i3-workspace-swap
+bindsym $mod+b exec i3-workspace-swap -s 1 -d 2
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -152,7 +151,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-#bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -212,11 +211,12 @@ default_floating_border 1pixel
 hide_edge_borders none
 
 # Start Applications
-bindsym $mod+q exec brave
+bindsym $mod+q exec firefox
 bindsym $mod+a exec dolphin
 bindsym $mod+z exec pamac-manager
 bindsym $mod+s exec discord
 bindsym $mod+w exec steam
+bindsym $mod+x exec easystroke
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -275,3 +275,8 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
   #Moniter Fix
   exec xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144
+
+  #Easystroke autostart
+  #I had trouble with autostarting easystroke so I made a script
+  set $easy-stroke /home/riley/.config/i3/easystroke_start
+  exec $easy-stroke
