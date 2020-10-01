@@ -4,7 +4,7 @@ cd
 #Obligitory update
 sudo pacman -Syu
 #Essentials
-sudo pacman -S xf86-video-amdgpu xorg xorg-xinit nitrogen picom alacritty nano firefox base-devel
+sudo pacman -S xf86-video-amdgpu xorg xorg-xinit nitrogen picom alacritty nano firefox base-devel mesa lib32-mesa
 #Installing yay
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
@@ -18,5 +18,6 @@ cd i3-workspace-swap
 python setup.py install
 cd
 #less essential essentials.
-sudo pacman -S polkit xfce4-power-manager clipit ncurses
-yay -S argon
+sudo pacman -S polkit xfce4-power-manager clipit ncurses steam ttf-liberation
+yay -S argon steam-fonts wqy-zenhei
+
