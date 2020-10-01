@@ -238,6 +238,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+exec --no-startup-id start-pulseaudio-x11
 
 #Moniter Fix
 exec xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144
