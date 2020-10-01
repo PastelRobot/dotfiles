@@ -1,7 +1,22 @@
 #!/bin/bash
 
-cd ~
+cd
 #Obligitory update
 sudo pacman -Syu
-#Basic drivers
-sudo pacman -S xf86-video-amdgpu 
+#Essentials
+sudo pacman -S xf86-video-amdgpu xorg xorg-xinit nitrogen picom alacritty nano firefox base-devel
+#Installing yay
+git clone https://aur.archlinux.org/yay-git.git
+cd yay-git
+makepkg -si
+cd
+#Window manager and tools
+sudo pacman -S i3 python python-pip
+#Install moniter swap
+git clone https://github.com/einzigartigerName/i3-workspace-swap.git
+cd i3-workspace-swap
+python setup.py install
+cd
+#less essential essentials.
+sudo pacman -S polkit xfce4-power-manager clipit ncurses
+yay -S argon
