@@ -26,7 +26,7 @@ python setup.py install
 cd
 #less essential essentials.
 sudo pacman -S polkit xfce4-power-manager wine-staging clipit avahi nm-connection-editor pavucontrol vlc lxappearance ncurses steam libreoffice-fresh linux-headers lutris dunst discord dolphin  ttf-liberation pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack pa-applet pavucontrol lightdm lightdm-gtk-greeter light-locker reflector
-yay -S argon steam-fonts wqy-zenhei i3-scrot splatmoji-git easystroke-git
+yay -S argon steam-fonts wqy-zenhei i3-scrot splatmoji-git easystroke-git xfce-polkit-git
 #enable services
 sudo systemctl enable lightdm.boot
 sudo systemctl enable reflector
