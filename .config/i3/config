@@ -244,7 +244,7 @@ exec xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144
 
 #Easystroke autostart
 #I had trouble with autostarting easystroke so I made a script
-set $easy-stroke /home/riley/.config/i3/easystroke_start
+set $easy-stroke /home/riley/.config/custom/easystroke_start.sh
 exec $easy-stroke
 
 #Splatmoji bind
