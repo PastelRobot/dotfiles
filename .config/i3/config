@@ -189,7 +189,7 @@ hide_edge_borders none
 
 # Start Applications
 bindsym $mod+q exec firefox
-bindsym $mod+a exec dolphin
+bindsym $mod+a exec dolphin -stylesheet /home/riley/.config/custom/style_sheet.qss
 bindsym $mod+z exec octopi
 bindsym $mod+w exec discord
 bindsym $mod+s exec steam
@@ -243,7 +243,7 @@ exec xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144
 
 #Easystroke autostart
 #I had trouble with autostarting easystroke so I made a script
-set $easy-stroke /home/riley/.config/i3/easystroke_start
+set $easy-stroke /home/riley/.config/custom/easystroke_start.sh
 exec $easy-stroke
 
 #Splatmoji bind
