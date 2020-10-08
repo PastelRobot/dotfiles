@@ -28,7 +28,7 @@ cd yay-git
 makepkg -si
 cd
 #less essential essentials.
-yay -S argon steam-fonts wqy-zenhei i3-scrot splatmoji-git easystroke-git xfce-polkit-git pa-applet-git
+yay -S octopi steam-fonts wqy-zenhei i3-scrot splatmoji-git easystroke-git xfce-polkit-git pa-applet-git
 #enable services
 sudo systemctl enable lightdm
 sudo systemctl enable reflector
