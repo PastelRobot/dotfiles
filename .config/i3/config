@@ -189,7 +189,7 @@ hide_edge_borders none
 
 # Start Applications
 bindsym $mod+q exec firefox
-bindsym $mod+a exec dolphin
+bindsym $mod+a exec dolphin -stylesheet /home/riley/.config/custom/style_sheet.qss
 bindsym $mod+z exec pamac-manager
 bindsym $mod+w exec discord
 bindsym $mod+s exec steam
