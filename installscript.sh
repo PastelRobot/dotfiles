@@ -13,7 +13,7 @@ sudo pacman -Syu
 #Essentials
 sudo pacman -S xf86-video-amdgpu base-devel xorg xorg-xinit xdg-utils nitrogen picom alacritty nano firefox mesa lib32-mesa
 #bulk install
-sudo pacman -S i3 python python-pip polkit i3status-rust dmenu awesome-terminal-fonts powerline-fonts
+sudo pacman -S i3 python python-pip polkit i3status-rust dmenu awesome-terminal-fonts powerline-fonts adobe-source-code-pro-fonts
 sudo pacman -S xfce4-power-manager wine-staging clipit avahi nm-connection-editor pavucontrol vlc
 sudo pacman -S libreoffice-fresh linux-headers lutris dunst discord dolphin ttf-font pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack
 sudo pacman -S pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings light-locker reflector
