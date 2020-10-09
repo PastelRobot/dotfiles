@@ -20,7 +20,7 @@ sudo pacman -S pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-setti
 sudo pacman -S lxappearance ncurses steam breeze-gtk breeze-icons dolphin-plugins python-i3ipc notepadqq
 #Install moniter swap
 git clone https://github.com/einzigartigerName/i3-workspace-swap.git
-cd i3-workspace-s
+cd i3-workspace-swap
 python setup.py install
 cd
 #install yay
