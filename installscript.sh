@@ -18,11 +18,6 @@ sudo pacman -S xfce4-power-manager wine-staging clipit avahi nm-connection-edito
 sudo pacman -S libreoffice-fresh linux-headers lutris dunst discord pcmanfm-gtk3 ttf-font pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack
 sudo pacman -S pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings light-locker reflector
 sudo pacman -S lxappearance ncurses steam breeze-gtk breeze-icons python-i3ipc notepadqq
-#Install moniter swap
-git clone https://github.com/einzigartigerName/i3-workspace-swap.git
-cd i3-workspace-swap
-python setup.py install
-cd
 #install yay
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
@@ -30,6 +25,7 @@ makepkg -si
 cd
 #less essential essentials.
 yay -S octopi steam-fonts wqy-zenhei i3-scrot splatmoji-git easystroke-git xfce-polkit-git pa-applet-git qt5ct
+sudo pip install i3-workspace-swap
 #enable services
 sudo systemctl enable lightdm
 sudo systemctl enable reflector
