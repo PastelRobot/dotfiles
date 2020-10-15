@@ -18,6 +18,7 @@ sudo pacman -S xfce4-power-manager wine-staging clipit avahi nm-connection-edito
 sudo pacman -S libreoffice-fresh linux-headers lutris dunst discord nemo ttf-font pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-jack
 sudo pacman -S pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings light-locker reflector
 sudo pacman -S lxappearance ncurses steam breeze-gtk breeze-icons python-i3ipc notepadqq vlc
+sudo pacman -S nemo-fileroller nemo-image-converter nemo-preview
 #install snapd
 git clone https://aur.archlinux.org/snapd.git
 cd snapd
