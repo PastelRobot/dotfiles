@@ -190,7 +190,7 @@ hide_edge_borders none
 
 # Start Applications
 bindsym $mod+q exec firefox
-bindsym $mod+a exec pcmanfm
+bindsym $mod+a exec nemo
 bindsym $mod+z exec octopi
 bindsym $mod+w exec discord
 bindsym $mod+s exec steam
