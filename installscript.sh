@@ -32,7 +32,6 @@ cd
 #less essential essentials.
 yay -S octopi steam-fonts wqy-zenhei i3-scrot splatmoji-git easystroke-git xfce-polkit-git pa-applet-git qt5ct i3exit
 sudo pip install i3-workspace-swap
-sudo snap install spotify
 #enable services
 sudo systemctl enable lightdm
 sudo systemctl enable reflector
