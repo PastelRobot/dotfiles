@@ -191,12 +191,10 @@ hide_edge_borders none
 # Start Applications
 bindsym $mod+q exec firefox
 bindsym $mod+a exec nemo
-bindsym $mod+z exec usr/bin/octopi
+bindsym $mod+z exec /usr/bin/octopi
 bindsym $mod+w exec discord
 bindsym $mod+s exec steam
 bindsym $mod+x exec lutris
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+o --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
