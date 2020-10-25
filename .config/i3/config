@@ -218,7 +218,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
       bindsym l exec --no-startup-id i3exit lock, mode "default"
       bindsym s exec --no-startup-id i3exit suspend, mode "default"
       bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-      bindsym e exec --no-startup-id i3exit logout, mode "default"
+      bindsym e exec --no-startup-id i3\exit logout, mode "default"
       bindsym h exec --no-startup-id i3exit hibernate, mode "default"
       bindsym r exec --no-startup-id i3exit reboot, mode "default"
       bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
@@ -230,15 +230,14 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Autostart applications
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id clipit
-exec_always --no-startup-id ff-theme-util
 exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id DISPLAY=":0" picom -b
 
 #Moniter Fix
 exec xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144
+exec for output in $(xrandr --prop | grep -E -o -i "^[A-Z\-]+-[0-9]+"); do xrandr --output "$output" --set "scaling mode" "Full aspect"; done
 
 #Easystroke autostart
 #I had trouble with autostarting easystroke so I made a script
@@ -247,3 +246,4 @@ exec $easy-stroke
 
 #Splatmoji bind
 bindsym $mod+slash exec splatmoji type
+
