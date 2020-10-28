@@ -220,7 +220,7 @@ exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 exec --no-startup-id clipit
 exec --no-startup-id start-pulseaudio-x11
 
-#Moniter Fix
+#Display configuration
 
 
 #Easystroke autostart
