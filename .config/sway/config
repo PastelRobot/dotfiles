@@ -164,7 +164,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         font xft:Source Code Pro 10, FontAwesome 12
-        status_command i3status-rs /home/riley/.config/custom/status.toml
+        swaybar_command
         tray_output primary
         colors {
             background #222D31
@@ -230,14 +230,11 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Autostart applications
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
-exec --no-startup-id nitrogen --restore
 exec --no-startup-id clipit
 exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id DISPLAY=":0" picom -b
 
 #Moniter Fix
-exec xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144
-exec for output in $(xrandr --prop | grep -E -o -i "^[A-Z\-]+-[0-9]+"); do xrandr --output "$output" --set "scaling mode" "Full aspect"; done
+
 
 #Easystroke autostart
 #I had trouble with autostarting easystroke so I made a script
