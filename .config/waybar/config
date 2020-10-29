@@ -1,16 +1,74 @@
 {
-    "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["battery", "clock"],
-    "sway/window": {
-        "max-length": 50
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+//
+// Positioning
+//
+"layer": "top", 		// is waybar above or below windows
+"position": "bottom", 	// Waybar position (top|bottom|left|right)
+"height": 23, 			// Waybar height (to be removed for auto height)
+// "width": 1280, // Waybar width
+
+
+//
+// Module locations
+//
+"modules-left": [
+	"sway/workspaces", 
+	"sway/mode",
+	"sway/window"
+],
+"modules-center": [
+],
+"modules-right": [
+	"pulseaudio", 
+	"clock", 
+	"tray"
+],
+
+
+//
+// Module configuration
+//
+"sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon} {name}",
+    "format-icons": {
+        "urgent": "",
+        "focused": "",
+        "default": ""
     }
+},
+
+"sway/mode": {
+	"format": "<span style=\"italic\">{}</span>"
+},
+
+"tray": {
+	// "icon-size": 21,
+	"spacing": 10
+},
+
+"clock": {
+	"tooltip-format": "{:%Y-%m-%d | %H:%M}",
+	"format-alt": "{:%Y-%m-%d}"
+},
+
+"pulseaudio": {
+	// "scroll-step": 1, // %, can be a float
+	"format": "{volume}% {icon} {format_source}",
+	"format-bluetooth": "{volume}% {icon} {format_source}",
+	"format-muted": " {format_source}",
+	"format-source": "{volume}% ",
+	"format-source-muted": "",
+	"format-icons": {
+		"headphones": "",
+		"handsfree": "",
+		"headset": "",
+		"phone": "",
+		"portable": "",
+		"car": "",
+		"default": ["", "", ""]
+	},
+	"on-click": "pavucontrol"
+}
 }
