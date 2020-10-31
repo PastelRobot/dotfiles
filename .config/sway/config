@@ -22,10 +22,7 @@ mouse_warping none
 bindsym $mod+Shift+q kill
 
 # start bemenu (a program launcher)
-bindsym $mod+d exec --no-startup-id bemenu-run
-
-# launch categorized menu
-bindsym $mod+F1 exec --no-startup-id morc_menu
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="bemenu"
 
 # change focus
 bindsym $mod+j focus left
@@ -101,9 +98,6 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 
-#Swapping each moniters active workspace https://github.com/einzigartigername/i3-workspace-swap
-bindsym $mod+b exec i3-workspace-swap -s 1 -d 2
-
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -117,9 +111,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r reload
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -153,7 +145,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         font xft:Source Code Pro 10, FontAwesome 12
-        swaybar_command
+        swaybar_command waybar
         tray_output primary
         colors {
             background #222D31
@@ -171,8 +163,8 @@ bar {
 
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border 1pixel
-default_floating_border 1pixel
+default_border pixel
+default_floating_border pixel
 
 # Hide borders
 hide_edge_borders none
@@ -181,7 +173,7 @@ hide_edge_borders none
 bindsym $mod+q exec firefox
 bindsym $mod+a exec nemo
 bindsym $mod+z exec /usr/bin/octopi
-bindsym $mod+w exec discord
+bindsym $mod+w exec QT_QPA_PLATFORM=xcb ripcord
 bindsym $mod+s exec steam
 bindsym $mod+x exec lutris
 bindsym $mod+Shift+o --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -199,35 +191,32 @@ bindsym $mod+Print --release exec --no-startup-id grim -g "$(slurp)"
   client.background       #2B2C2B
 
   # Set shut down, restart and locking features
-  bindsym $mod+0 mode "$mode_system"
-  set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-  mode "$mode_system" {
-      bindsym l exec --no-startup-id i3exit lock, mode "default"
-      bindsym s exec --no-startup-id i3exit suspend, mode "default"
-      bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-      bindsym e exec --no-startup-id i3exit logout, mode "default"
-      bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-      bindsym r exec --no-startup-id i3exit reboot, mode "default"
-      bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-      # exit system mode: "Enter" or "Escape"
-      bindsym Return mode "default"
-      bindsym Escape mode "default"
-  }
+bindsym $alt+Shift+s exec systemctl poweroff
+bindsym $alt+Shift+r exec systemctl reboot
 
 # Autostart applications
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
-exec --no-startup-id clipit
 exec --no-startup-id start-pulseaudio-x11
 
 #Display configuration
+output DP-1 {
+mode 2560x1440@144Hz
+pos 0 0
+background /home/riley/Pictures/Wallpapers/1.png fill
+}
+output HDMI-A-1 {
+pos 2560 0
+background /home/riley/Pictures/Wallpapers/2.jpg fill
+}
 
-
-#Easystroke autostart
-#I had trouble with autostarting easystroke so I made a script
-set $easy-stroke /home/riley/.config/custom/easystroke_start.sh
-exec $easy-stroke
-
-#Splatmoji bind
-bindsym $mod+slash exec splatmoji type
-
+#Input Configuration
+input 1133:4123:Logitech_M705 pointer_accel 1 accel_profile flat
+input 9494:303:Cooler_Master_Technology_Inc._MM710_Gaming_Mouse_Consumer_Control {
+    accel_profile flat
+    pointer_accel -1
+}
+input 12267:1:VEIKK.INC_S640 {
+    accel_profile flat
+    pointer_accel 1
+	map_to_region -2000 -2500 24000 13500
+}
