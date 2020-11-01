@@ -5,10 +5,6 @@ set $alt Mod1
 # is used in the bar {} block below.
 font xft:Source Code Pro 10
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -234,6 +230,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id clipit
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id DISPLAY=":0" picom -b
+exec --no-startup-id nm-applet
 
 #Moniter Fix
 exec xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144
@@ -246,4 +243,3 @@ exec $easy-stroke
 
 #Splatmoji bind
 bindsym $mod+slash exec splatmoji type
-
