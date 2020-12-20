@@ -175,8 +175,8 @@ bar {
 
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
-default_floating_border pixel 1
+default_border 1pixel
+default_floating_border 1pixel
 
 # Hide borders
 hide_edge_borders none
@@ -227,9 +227,10 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id clipit
 exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id DISPLAY=":0" picom -b
+exec --no-startup-id picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id tilda
+exec --no-startup-id autotiling
 
 #Moniter Fix
 exec xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144
@@ -240,11 +241,6 @@ for_window [instance="tilda"] floating enable
 
 #Fix Origin
 for_window [instance="origin.exe"] floating enable
-
-#Easystroke autostart
-#I had trouble with autostarting easystroke so I made a script
-set $easy-stroke /home/riley/.config/custom/easystroke_start.sh
-exec $easy-stroke
 
 #Splatmoji bind
 bindsym $mod+slash exec splatmoji copy
