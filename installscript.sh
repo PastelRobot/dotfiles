@@ -26,7 +26,7 @@ makepkg -si
 cd
 #less essential essentials.
 yay -S octopi steam-fonts wqy-zenhei i3-scrot splatmoji-git easystroke-git xfce-polkit-git pa-applet-git qt5ct i3exit network-manager-applet clipit pa-applet-get breeze-obsidian-cursor-theme
-yay -S autotiling rofi-dmenu
+yay -S autotiling
 sudo pip install i3-workspace-swap
 #enable services
 sudo systemctl enable lightdm
