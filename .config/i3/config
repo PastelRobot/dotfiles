@@ -189,6 +189,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id volctl
 exec --no-startup-id tilda
 exec --no-startup-id autotiling
+exec --no-startup-id dex -a -s /home/riley/.config/autostart
 
 #Moniter Fix
 exec for output in $(xrandr --prop | grep -E -o -i "^[A-Z\-]+-[0-9]+"); do xrandr --output "$output" --set "scaling mode" "Full aspect"; done
