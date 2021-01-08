@@ -25,7 +25,7 @@ cd yay-git
 makepkg -si
 cd
 #less essential essentials.
-yay -S octopi steam-fonts wqy-zenhei i3-scrot splatmoji-git easystroke-git xfce-polkit-git pa-applet-git qt5ct i3exit network-manager-applet clipit pa-applet-get breeze-obsidian-cursor-theme
+yay -S octopi steam-fonts wqy-zenhei i3-scrot splatmoji-git xfce-polkit-git qt5ct i3exit network-manager-applet clipit breeze-obsidian-cursor-theme
 yay -S autotiling
 sudo pip install i3-workspace-swap
 #enable services
