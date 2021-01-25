@@ -19,14 +19,14 @@ sudo pacman -S notepadqq lutris dunst nemo ttf-font pipewire pipewire-alsa pipew
 sudo pacman -S pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings reflector flatpak dex
 sudo pacman -S lxappearance ncurses lxrandr-gtk3 steam breeze-gtk breeze-icons python-i3ipc libreoffice-fresh vlc
 sudo pacman -S nemo-fileroller nemo-image-converter nemo-preview libu2f-host noto-fonts-emoji gnu-free-fonts ttf-arphic-uming ttf-indic-otf
-#install yay
-git clone https://aur.archlinux.org/yay-git.git
+#install paru
+git clone https://aur.archlinux.org/paru.git
 cd yay-git
 makepkg -si
 cd
 #less essential essentials.
-yay -S octopi steam-fonts wqy-zenhei i3-scrot splatmoji-git xfce-polkit-git qt5ct i3exit network-manager-applet clipit breeze-obsidian-cursor-theme
-yay -S autotiling volctl
+paru -S octopi steam-fonts wqy-zenhei i3-scrot splatmoji-git xfce-polkit-git qt5ct i3exit network-manager-applet clipit breeze-obsidian-cursor-theme
+paru -S autotiling volctl yay-git
 sudo pip install i3-workspace-swap
 #enable services
 sudo systemctl enable lightdm
