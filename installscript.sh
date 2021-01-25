@@ -21,7 +21,7 @@ sudo pacman -S lxappearance ncurses lxrandr-gtk3 steam breeze-gtk breeze-icons p
 sudo pacman -S nemo-fileroller nemo-image-converter nemo-preview libu2f-host noto-fonts-emoji gnu-free-fonts ttf-arphic-uming ttf-indic-otf
 #install paru
 git clone https://aur.archlinux.org/paru.git
-cd yay-git
+cd paru
 makepkg -si
 cd
 #less essential essentials.
