@@ -3,7 +3,13 @@
 # Use custom format
 format = """
 (bold green)$directory$rust$package
-[└─>](bold green) """
+[$username~>](bold green) """
+
+[username]
+style_user = "white bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
 
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
