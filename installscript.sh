@@ -23,10 +23,10 @@ sudo pacman -S nemo-fileroller nemo-image-converter nemo-preview libu2f-host not
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
-cd
+cd ~
 #less essential essentials.
 paru -S octopi steam-fonts wqy-zenhei i3-scrot splatmoji-git xfce-polkit-git qt5ct i3exit network-manager-applet clipit breeze-obsidian-cursor-theme
-paru -S autotiling volctl yay-git
+paru -S autotiling volctl yay-git starship-bin
 sudo pip install i3-workspace-swap
 #enable services
 sudo systemctl enable lightdm
