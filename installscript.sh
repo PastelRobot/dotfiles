@@ -26,7 +26,7 @@ makepkg -si
 cd ~
 #less essential essentials.
 paru -S octopi steam-fonts wqy-zenhei splatmoji-git xfce-polkit-git qt5ct i3exit network-manager-applet clipit breeze-obsidian-cursor-theme
-paru -S autotiling volctl yay-git starship-bin
+paru -S autotiling volctl yay-git starship-bin mailspring
 sudo pip install i3-workspace-swap
 #enable services
 sudo systemctl enable lightdm
