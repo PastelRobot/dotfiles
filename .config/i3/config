@@ -132,23 +132,24 @@ bar {
 
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
-default_floating_border pixel 1
+default_border none
+default_floating_border none
 
 # Hide borders
 hide_edge_borders none
 
 # Start Applications
-bindsym $mod+q exec firefox
+bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+q exec librewolf
 bindsym $mod+a exec nemo
-bindsym $mod+z exec /usr/bin/octopi
+bindsym $mod+z exec heroic
 bindsym $mod+w exec flatpak run com.discordapp.Discord
 bindsym $mod+s exec steam-native
 bindsym $mod+x exec lutris
 bindsym $mod+Shift+o --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym Print exec --no-startup-id maim ~/Pictures/$(date +%s).png
+bindsym Ctrl+Print --release exec --no-startup-id maim -s -D ~/Pictures/$(date +%s).png
+bindsym Shift+Print --release exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Pictures/$(date +%s).png
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Theme colors
@@ -187,9 +188,9 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id nm-applet
 exec --no-startup-id volctl
-exec --no-startup-id tilda
+exec --no-startup-id sleep 2; tilda
 exec --no-startup-id autotiling
-exec --no-startup-id dex -a -s /home/riley/.config/autostart
+exec --no-startup-id mailspring -b
 
 #Moniter Fix
 exec for output in $(xrandr --prop | grep -E -o -i "^[A-Z\-]+-[0-9]+"); do xrandr --output "$output" --set "scaling mode" "Full aspect"; done
