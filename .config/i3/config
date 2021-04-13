@@ -140,9 +140,9 @@ hide_edge_borders none
 
 # Start Applications
 bindsym $mod+Shift+Return exec alacritty
-bindsym $mod+q exec librewolf
+bindsym $mod+q exec firefox
 bindsym $mod+a exec nemo
-bindsym $mod+z exec heroic
+bindsym $mod+z exec pavucontrol
 bindsym $mod+w exec flatpak run com.discordapp.Discord
 bindsym $mod+s exec steam-native
 bindsym $mod+x exec lutris
