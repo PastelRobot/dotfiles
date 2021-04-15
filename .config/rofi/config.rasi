@@ -1,26 +1,24 @@
-/**
- *Shamelessly Stolen from https://gitlab.com/dwt1/dotfiles
- */
-
+/*Dracula theme based on the Purple official rofi theme*/
 
 * {
-    background-color:            #282c34;
-    border-color:                #282c34;
-    text-color:                  #bbc2cf;
-    font:                        "Source Code Pro 10";
-    prompt-font:                 "Source Code Pro 10";
-    prompt-background:           #51afef;
-    prompt-foreground:           #282c34;
-    prompt-padding:              4px;
-    alternate-normal-background: #1c1f24;
-    alternate-normal-foreground: @text-color;
-    selected-normal-background:  #ae3f3e;
-    selected-normal-foreground:  #ffffff;
-    spacing:                     3;
+    font: "Jetbrains Mono 12";
+    foreground: #f8f8f2;
+    background-color: #282a36;
+    active-background: #6272a4;
+    urgent-background: #ff5555;
+    selected-background: @active-background;
+    selected-urgent-background: @urgent-background;
+    selected-active-background: @active-background;
+    separatorcolor: @active-background;
+    bordercolor: @active-background;
 }
+
 #window {
-    border:  1;
-    padding: 5;
+    background-color: @background;
+    border:           1;
+    border-radius: 6;
+    border-color: @bordercolor;
+    padding:          5;
 }
 #mainbox {
     border:  0;
@@ -28,56 +26,97 @@
 }
 #message {
     border:       1px dash 0px 0px ;
+    border-color: @separatorcolor;
     padding:      1px ;
+}
+#textbox {
+    text-color: @foreground;
 }
 #listview {
     fixed-height: 0;
     border:       2px dash 0px 0px ;
+    border-color: @bordercolor;
     spacing:      2px ;
-    scrollbar:    true;
+    scrollbar:    false;
     padding:      2px 0px 0px ;
 }
 #element {
     border:  0;
     padding: 1px ;
 }
+#element.normal.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @foreground;
+}
 #element.selected.normal {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
+    background-color: @selected-background;
+    text-color:       @foreground;
+}
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @foreground;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @foreground;
 }
 #element.alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color:       @alternate-normal-foreground;
+    background-color: @background;
+    text-color:       @foreground;
+}
+#element.alternate.urgent {
+    background-color: @urgent-background;
+    text-color:       @foreground;
+}
+#element.alternate.active {
+    background-color: @active-background;
+    text-color:       @foreground;
 }
 #scrollbar {
-    width:        0px ;
+    width:        2px ;
     border:       0;
-    handle-width: 0px ;
+    handle-width: 8px ;
     padding:      0;
 }
 #sidebar {
-    border: 2px dash 0px 0px ;
+    border:       2px dash 0px 0px ;
+    border-color: @separatorcolor;
 }
 #button.selected {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
+    background-color: @selected-background;
+    text-color:       @foreground;
 }
 #inputbar {
     spacing:    0;
+    text-color: @foreground;
     padding:    1px ;
 }
 #case-indicator {
     spacing:    0;
+    text-color: @foreground;
 }
 #entry {
-    padding: 4px 4px;
-    expand: false;
-    width: 10em;
+    spacing:    0;
+    text-color: @foreground;
 }
 #prompt {
-    padding:          @prompt-padding;
-    background-color: @prompt-background;
-    text-color:       @prompt-foreground;
-    font:             @prompt-font;
-    border-radius:    2px;
+    spacing:    0;
+    text-color: @foreground;
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @foreground;
 }
