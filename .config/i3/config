@@ -139,7 +139,7 @@ default_floating_border none
 hide_edge_borders none
 
 # Start Applications
-bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Return exec alacritty
 bindsym $mod+q exec firefox
 bindsym $mod+a exec nemo
 bindsym $mod+z exec pavucontrol
@@ -188,15 +188,11 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id nm-applet
 exec --no-startup-id volctl
-exec --no-startup-id sleep 2; tilda
 exec --no-startup-id autotiling
 exec --no-startup-id mailspring -b
 
 #Moniter Fix
 exec for output in $(xrandr --prop | grep -E -o -i "^[A-Z\-]+-[0-9]+"); do xrandr --output "$output" --set "scaling mode" "Full aspect"; done
-
-#Fix Tilda
-for_window [instance="tilda"] floating enable
 
 #Fix Origin
 for_window [instance="origin.exe"] floating enable
