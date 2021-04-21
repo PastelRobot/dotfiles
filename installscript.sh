@@ -20,7 +20,7 @@ sudo pacman -S pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-setti
 sudo pacman -S lxappearance ncurses lxrandr-gtk3 steam breeze-gtk breeze-icons python-i3ipc libreoffice-fresh mpv
 sudo pacman -S nemo-fileroller nemo-image-converter nemo-preview libu2f-host noto-fonts-emoji gnu-free-fonts ttf-arphic-uming ttf-indic-otf
 #install paru
-git clone https://aur.archlinux.org/paru.git
+git clone https://aur.archlinux.org/paru-bin.git
 cd paru
 makepkg -si
 cd ~
