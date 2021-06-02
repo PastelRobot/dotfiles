@@ -17,7 +17,7 @@ sudo pacman -S i3 python python-pip polkit i3status-rust rofi awesome-terminal-f
 sudo pacman -S xfce4-power-manager wine-staging avahi nm-connection-editor network-manager-applet ffmpegthumbnailer libgsf libopenraw tumbler ristretto
 sudo pacman -S notepadqq lutris dunst nemo ttf-font pipewire pipewire-alsa pipewire-pulse pipewire-jack
 sudo pacman -S pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings reflector flatpak dex maim peek
-sudo pacman -S lxappearance ncurses lxrandr-gtk3 steam breeze-gtk breeze-icons python-i3ipc libreoffice-fresh mpv
+sudo pacman -S lxappearance ncurses lxrandr-gtk3 steam breeze-gtk breeze-icons python-i3ipc libreoffice-fresh mpv unarchiver
 sudo pacman -S nemo-fileroller nemo-image-converter nemo-preview libu2f-host noto-fonts-emoji gnu-free-fonts ttf-arphic-uming ttf-indic-otf
 #install paru
 git clone https://aur.archlinux.org/paru-bin.git
