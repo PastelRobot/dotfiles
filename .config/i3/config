@@ -139,7 +139,7 @@ default_floating_border none
 hide_edge_borders none
 
 # Start Applications
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 bindsym $mod+q exec firefox
 bindsym $mod+a exec nemo
 bindsym $mod+z exec pavucontrol
@@ -147,9 +147,9 @@ bindsym $mod+w exec flatpak run com.discordapp.Discord
 bindsym $mod+s exec steam-native -noverifyfiles
 bindsym $mod+x exec lutris
 bindsym $mod+Shift+o --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id maim ~/Pictures/$(date +%s).png
-bindsym Ctrl+Print --release exec --no-startup-id maim -s -D ~/Pictures/$(date +%s).png
-bindsym Shift+Print --release exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Pictures/$(date +%s).png
+bindsym Print exec --no-startup-id maim ~/Pictures/Snips/$(date +%s).png
+bindsym Ctrl+Print --release exec --no-startup-id maim -s -D ~/Pictures/Snips/$(date +%s).png
+bindsym Shift+Print --release exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Pictures/Snips/$(date +%s).png
 bindsym $mod+Shift+Print exec --no-startup-id peek
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
@@ -190,6 +190,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id volctl
 exec --no-startup-id autotiling
 exec --no-startup-id mailspring -b
+exec --no-startup-id pulseeffects --gapplication-service
 
 #Moniter Fix
 exec for output in $(xrandr --prop | grep -E -o -i "^[A-Z\-]+-[0-9]+"); do xrandr --output "$output" --set "scaling mode" "Full aspect"; done
