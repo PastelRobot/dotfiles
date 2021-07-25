@@ -114,7 +114,9 @@ bindsym $mod+Right resize grow width 10 px or 10 ppt
 # finds out, if available)
 bar {
         font xft:Source Code Pro 10, FontAwesome 12
-        status_command i3status-rs /home/riley/.config/custom/status.toml
+        status_command i3status-rs $HOME/.config/custom/status.toml
+		mode hide
+		modifier none
 		position bottom
         tray_output primary
         colors {
@@ -129,7 +131,7 @@ bar {
     binding_mode       #FF5555 #FF5555 #F8F8F2
   }
 }
-
+bindsym $mod+c bar mode toggle
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border none
@@ -146,7 +148,6 @@ bindsym $mod+z exec pavucontrol
 bindsym $mod+w exec flatpak run com.discordapp.Discord
 bindsym $mod+s exec steam-native -noverifyfiles
 bindsym $mod+x exec lutris
-bindsym $mod+Shift+o --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id maim ~/Pictures/Snips/$(date +%s).png
 bindsym Ctrl+Print --release exec --no-startup-id maim -s -D ~/Pictures/Snips/$(date +%s).png
 bindsym Shift+Print --release exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Pictures/Snips/$(date +%s).png
@@ -184,13 +185,12 @@ exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id clipit
-exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id nm-applet
 exec --no-startup-id volctl
 exec --no-startup-id autotiling
 exec --no-startup-id mailspring -b
-exec --no-startup-id pulseeffects --gapplication-service
+exec --no-startup-id sleep 15; $HOME/.local/bin/noisetorch -i -s alsa_input.usb-Speed_Dragon_USB_Advanced_Audio_Device-00.mono-fallback -t 85
 
 #Moniter Fix
 exec for output in $(xrandr --prop | grep -E -o -i "^[A-Z\-]+-[0-9]+"); do xrandr --output "$output" --set "scaling mode" "Full aspect"; done
