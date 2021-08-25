@@ -19,6 +19,7 @@ doas pacman -S notepadqq lutris dunst nemo ttf-font pipewire pipewire-alsa pipew
 doas pacman -S pavucontrol lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings reflector flatpak maim peek
 doas pacman -S lxappearance ncurses lxrandr-gtk3 steam breeze-gtk breeze-icons python-i3ipc libreoffice-fresh mpv unarchiver redshift
 doas pacman -S nemo-fileroller nemo-image-converter nemo-preview noto-fonts-emoji gnu-free-fonts ttf-arphic-uming ttf-indic-otf
+doas pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau
 #install paru
 git clone https://aur.archlinux.org/paru-bin.git
 cd paru
