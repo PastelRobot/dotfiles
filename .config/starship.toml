@@ -1,5 +1,11 @@
 # ~/.config/starship.toml
 
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the newline at the start of the prompt
+add_newline = false
+
 # Use custom format
 format = """
 (bold green)$directory$rust$package
@@ -10,9 +16,3 @@ style_user = "white bold"
 format = "[$user]($style) "
 disabled = false
 show_always = true
-
-# Wait 10 milliseconds for starship to check files under the current directory.
-scan_timeout = 10
-
-# Disable the newline at the start of the prompt
-add_newline = false
