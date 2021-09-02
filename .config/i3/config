@@ -138,7 +138,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q exec firefox
 bindsym $mod+a exec nemo
 bindsym $mod+z exec pavucontrol
-bindsym $mod+w exec flatpak run com.discordapp.Discord
+bindsym $mod+w exec discord
 bindsym $mod+s exec steam-native -noverifyfiles
 bindsym $mod+x exec lutris
 bindsym Print exec --no-startup-id maim ~/Pictures/Snips/$(date +%s).png
