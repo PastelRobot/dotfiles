@@ -29,6 +29,9 @@ cd ~
 paru -S steam-fonts wqy-zenhei splatmoji-git xfce-polkit-git qt5ct i3exit network-manager-applet clipit
 paru -S autotiling volctl mailspring noisetorch-bin dracula-gtk-theme-git
 doas pip install i3-workspace-swap
+#Install zap
+doas wget https://github.com/srevinsaju/zap/releases/download/continuous/zap-amd64 -O /usr/local/bin/zap
+doas chmod +x /usr/local/bin/zap
 #enable services
 doas systemctl enable lightdm
 doas systemctl enable reflector
