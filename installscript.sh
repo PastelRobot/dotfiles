@@ -35,3 +35,4 @@ doas chmod +x /usr/local/bin/zap
 #enable services
 doas systemctl enable lightdm
 doas systemctl enable reflector
+systemctl --user enable psd
