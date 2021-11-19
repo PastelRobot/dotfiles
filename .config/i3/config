@@ -172,7 +172,7 @@ bindsym $mod+0 mode "$mode_system"
 
 # Autostart applications
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
-#exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id clipit
