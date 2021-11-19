@@ -136,7 +136,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q exec firefox
 bindsym $mod+a exec nemo
 bindsym $mod+z exec pavucontrol
-bindsym $mod+w exec /home/riley/Applications/Discord-0.0.16-x86_64_ab0ab0aa2ebd4b80c847a10c4ee0bf38.AppImage
+bindsym $mod+w exec ~/Applications/Discord-0.0.16-x86_64_722e8f4aa30311ee1e775029e0edb16d.AppImage
 bindsym $mod+s exec steam-native -noverifyfiles
 bindsym $mod+x exec lutris
 bindsym Print exec --no-startup-id maim ~/Pictures/Snips/$(date +%s).png
@@ -154,23 +154,25 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
-  # Set shut down, restart and locking features
-  bindsym $mod+0 mode "$mode_system"
-  set $mode_system (l)ock, (e)xit, (r)eboot, (s)hutdown
-  mode "$mode_system" {
-      bindsym l exec --no-startup-id i3exit lock, mode "default"
-      bindsym e exec --no-startup-id i3exit logout, mode "default"
-      bindsym r exec --no-startup-id i3exit reboot, mode "default"
-      bindsym s exec --no-startup-id i3exit shutdown, mode "default"
+set $Locker i3lock -i ~/Pictures/Wallpapers/lain.png && sleep 1
 
-      # exit system mode: "Enter" or "Escape"
-      bindsym Return mode "default"
-      bindsym Escape mode "default"
-  }
+set $mode_system System (l)ock, (e)xit, (r)eboot, (s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+0 mode "$mode_system"
 
 # Autostart applications
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
-exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id clipit
