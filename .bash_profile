@@ -24,7 +24,5 @@ WHITE='\033[1;37m'
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
- ~/.config/custom/love-lain.sh
- sleep 1
  startx
 fi
