@@ -22,7 +22,7 @@ LIGHTPURPLE='\033[1;35m'
 LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
- startx
+  sleep 1
+  startx
 fi
