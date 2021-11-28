@@ -108,7 +108,7 @@ bar {
         status_command i3status-rs $HOME/.config/custom/status.toml
 		mode hide
 		modifier none
-		position bottom
+		position top
         tray_output primary
         colors {
     background #282A36
@@ -137,7 +137,7 @@ bindsym $mod+q exec firefox
 bindsym $mod+a exec nemo
 bindsym $mod+z exec pavucontrol
 bindsym $mod+w exec ~/Applications/Discord-0.0.16-x86_64_722e8f4aa30311ee1e775029e0edb16d.AppImage
-bindsym $mod+s exec steam-native -noverifyfiles
+bindsym $mod+s exec steam -noverifyfiles
 bindsym $mod+x exec lutris
 bindsym Print exec --no-startup-id maim ~/Pictures/Snips/$(date +%s).png
 bindsym Ctrl+Print --release exec --no-startup-id maim -s -D ~/Pictures/Snips/$(date +%s).png
