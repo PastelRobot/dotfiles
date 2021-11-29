@@ -17,7 +17,7 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
 bindsym $mod+Shift+d exec rofi -show run
 # Use .desktop files instead
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -run-shell-command '{terminal} -e bash -ic "{cmd} && read"'
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
