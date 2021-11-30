@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -14,3 +16,5 @@ alias sink="pw-loopback -m '[ FL FR]' --capture-props='media.class=Audio/Sink no
 
 #Starship
 eval "$(starship init bash)"
+
+[[ ${BLE_VERSION-} ]] && ble-attach
