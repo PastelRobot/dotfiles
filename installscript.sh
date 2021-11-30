@@ -26,7 +26,7 @@ cd paru
 makepkg -si
 cd ~
 #less essential essentials.
-paru -S steam-fonts wqy-zenhei splatmoji-git xfce-polkit-git qt5ct clipit
+paru -S steam-fonts wqy-zenhei splatmoji-git xfce-polkit-git qt5ct clipit blesh
 paru -S autotiling volctl mailspring noisetorch-bin dracula-gtk-theme-git
 doas pip install i3-workspace-swap
 #enable services
