@@ -31,4 +31,3 @@ paru -S autotiling volctl mailspring noisetorch-bin dracula-gtk-theme-git
 doas pip install i3-workspace-swap
 #enable services
 doas systemctl enable reflector
-systemctl --user enable psd
