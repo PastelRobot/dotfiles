@@ -10,9 +10,13 @@ PS1='[\u@\h \W]\$ '
 #Aliases
 alias sudo="doas"
 alias sink="pw-loopback -m '[ FL FR]' --capture-props='media.class=Audio/Sink node.name=my-sink'"
-alias neofetch="macchina"
-alias clean="doas pacman -Rs $(pacman -Qqtd)"
+#alias neofetch="macchina"
 
 #Starship
 eval "$(starship init bash)"
-source /usr/share/blesh/ble.sh
+source /usr/share/blesh/ble.sh --rcfile "$HOME/.blerc"
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION
