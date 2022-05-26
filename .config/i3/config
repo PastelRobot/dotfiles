@@ -15,9 +15,9 @@ mouse_warping none
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+Shift+d exec rofi -show run
+bindsym $mod+Shift+d exec rofi -show run -run-shell-command '{terminal} -e bash -ic "{cmd} && read"'
 # Use .desktop files instead
-bindsym $mod+d exec rofi -show drun -run-shell-command '{terminal} -e bash -ic "{cmd} && read"'
+bindsym $mod+d exec rofi -show drun
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -136,7 +136,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q exec firefox
 bindsym $mod+a exec nemo
 bindsym $mod+z exec pavucontrol
-bindsym $mod+w exec ~/Applications/Discord-0.0.16-x86_64_722e8f4aa30311ee1e775029e0edb16d.AppImage
+bindsym $mod+w exec flatpak run com.discordapp.Discord
 bindsym $mod+s exec steam -noverifyfiles
 bindsym $mod+x exec lutris
 bindsym Print exec --no-startup-id maim ~/Pictures/Snips/$(date +%s).png
@@ -154,14 +154,13 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
-set $Locker i3lock -i ~/Pictures/Wallpapers/lain.png && sleep 1
+set $Locker i3lock && sleep 1
 
-set $mode_system System (l)ock, (e)xit, (r)eboot, (s)hutdown
+set $mode_system System (l) ock, (r) eboot, (s) hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym r exec --no-startup-id ~/.config/custom/fancy-reboot.sh, mode "default"
-    bindsym s exec --no-startup-id ~/.config/custom/fancy-shutdown.sh, mode "default"  
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"  
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -172,6 +171,7 @@ bindsym $mod+0 mode "$mode_system"
 
 # Autostart applications
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
+exec --no-startup-id cpupower frequency-set -g performance
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
@@ -181,7 +181,12 @@ exec --no-startup-id nm-applet
 exec --no-startup-id volctl
 exec --no-startup-id autotiling
 exec --no-startup-id mailspring -b
-exec --no-startup-id sleep 15; noisetorch -i -s alsa_input.usb-Speed_Dragon_USB_Advanced_Audio_Device-00.mono-fallback -t 85
+exec --no-startup-id easyeffects --gapplication-service
+#exec --no-startup-id sleep 15; noisetorch -i -s alsa_input.usb-0c76_US__MIC1-00.mono-fallback -t 85
+
+#Focus Tweaks
+focus_follows_mouse yes
+focus_on_window_activation none
 
 #Moniter Fix
 exec for output in $(xrandr --prop | grep -E -o -i "^[A-Z\-]+-[0-9]+"); do xrandr --output "$output" --set "scaling mode" "Full aspect"; done
@@ -191,3 +196,5 @@ for_window [instance="origin.exe"] floating enable
 
 #Binds
 bindsym $mod+slash exec splatmoji copy $HOME/.config/splatmoji/custom.tsv
+bindsym $mod+l exec ~/nerd-dictation/nerd-dictation begin
+bindsym $mod+k exec ~/nerd-dictation/nerd-dictation end
