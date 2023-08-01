@@ -17,6 +17,6 @@ doas pacman -S hyprland xdg-desktop-portal-hyprland python python-pip polkit awe
 doas pacman -S polkit-kde-agent wine-staging avahi ffmpegthumbnailer libgsf libopenraw gtk3
 doas pacman -S kate hyprpaper lutris ttf-font pipewire pipewire-alsa pipewire-pulse pipewire-jack
 doas pacman -S mako amd-ucode qt5-wayland qt6-wayland wofi copyq thunar flameshot cpupower
-doas pacman -S ncurses steam python-i3ipc libreoffice-fresh mpv swayimg unarchiver
+doas pacman -S ncurses steam libreoffice-fresh mpv swayimg unarchiver
 doas pacman -S tumbler gvfs thunar-archive-plugin thunar-volman noto-fonts-emoji gnu-free-fonts ttf-arphic-uming ttf-indic-otf
 doas pacman -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau gvfs-mtp
