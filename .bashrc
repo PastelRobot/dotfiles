@@ -8,13 +8,13 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 #Aliases
-alias sudo="doas"
+#alias sudo="doas"
 alias sink="pw-loopback -m '[ FL FR]' --capture-props='media.class=Audio/Sink node.name=my-sink'"
 #alias neofetch="macchina"
 
 #Starship
 eval "$(starship init bash)"
-source /usr/share/blesh/ble.sh --rcfile "$HOME/.blerc"
+[[ $- == *i* ]] && source /usr/share/blesh/ble.sh
 
 
 # BEGIN_KITTY_SHELL_INTEGRATION
